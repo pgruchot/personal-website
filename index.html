@@ -8,7 +8,94 @@
   </head>
   <body>
     <canvas id="c"></canvas>
-    <!--<div class="overlay"></div>-->
+    <div class="cover-shadow"></div>
+    <div class="loader active">
+      <div class="loader-bar bar1"></div>
+      <div class="loader-bar bar2"></div>
+      <div class="loader-bar bar3"></div>
+    </div>
+    <div class="cover-tiles">
+      <div class="tile tile1"></div>
+      <div class="tile tile2"></div>
+      <div class="tile tile3"></div>
+      <div class="tile tile4"></div>
+      <div class="tile tile5"></div>
+    </div>
+    <div class="logo-container">
+      <h3 class="logo-text">Patryk</h3>
+      <svg
+        class="logo-svg"
+        viewBox="0 0 26.458333 26.458334"
+        version="1.1"
+        id="svg8"
+      >
+        <path
+          class="logo-path"
+          d="M 13.229165,0.14543089 0.10796154,26.395422 H 2.2812052 L 13.229165,4.4931155 15.986591,10.009592 h -3.341606 l -1.086622,2.173844 h 7.688093 L 18.159833,10.009592 14.315788,2.3192722 Z M 10.47174,14.357419 5.5410723,24.221581 4.4544486,26.395422 H 26.350371 L 25.263749,24.221581 20.333077,14.357419 H 18.159833 14.81823 l -1.086622,2.17384 h 5.514848 l 3.844048,7.690322 H 7.7143155 l 4.9306695,-9.864162 z"
+          id="path942"
+        />
+      </svg>
+      <h3 class="logo-text">Gruchot</h3>
+    </div>
+    <div class="menu-container disabled">
+      <div class="menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="menu-links disabled">
+      <a href="#" class="menu-link disabled">Home</a>
+      <a href="#" class="menu-link disabled">About</a>
+      <a href="#" class="menu-link disabled">Contact</a>
+      <a href="#" class="menu-link disabled">github</a>
+    </div>
+    <div class="text-container text1 active">
+      <h1 class="text-h1 text1-h1-1">Hey!</h1>
+      <h1 class="text-h1 text1-h1-2">i'm <bold>patryk</bold>.</h1>
+    </div>
+    <div class="text-container text2">
+      <p class="text-p">
+        i'm a recent graduate IT engineer from <bold>Opole</bold>. My specialty
+        is <bold>web development</bold>, *mostly* done with
+        <bold>javascript</bold> based technologies.
+        <bold class="animate">|</bold>
+      </p>
+    </div>
+    <div class="text-container text3">
+      <p class="text-p">
+        contact me @: </br>
+        <bold>patryk.gruchot@outlook.com</bold></br>
+        Check my personal projects @:</br>
+        <bold><a href="https://github.com/pgruchot">github</a></bold>
+      </p>
+    </div>
+    <div class="page-nav">
+      <a href="" class="page-nav-link page-nav-link-active"></a>
+      <a href="" class="page-nav-link"></a>
+      <a href="" class="page-nav-link"></a>
+    </div>
+<div class="color-select">
+  <div class="color-box color1-border">
+    <div class="color-fill color-fill-active color1">
+    </div>
+  </div>
+  <div class="color-box color2-border">
+    <div class="color-fill color2">
+    </div>
+  </div>
+  <div class="color-box color3-border">
+    <div class="color-fill color3">
+    </div>
+  </div>
+  <div class="color-box color4-border">
+    <div class="color-fill color4">
+    </div>
+  </div>
+</div>
     <script src="./scripts/background.js" type="module"></script>
+    <script src="./scripts/menu.js" type="module"></script>
+    <script src="./scripts/carousel.js" type="module"></script>
+    <script src="./scripts/color.js" type="module"></script>
   </body>
 </html>

@@ -1,25 +1,25 @@
 import * as THREE from "../three.js-master/build/three.module.js";
 import { OrbitControls } from "../three.js-master/examples/jsm/controls/OrbitControls.js";
 import { OBJLoader2 } from "../three.js-master/examples/jsm/loaders/OBJLoader2.js";
+import { tiles } from "./tiles.js";
+import { enableMenu } from "./menu.js";
+import { mainColor } from "./color.js";
 function main() {
-  // Get html element reference
+  // Get html canvas reference
   const canvas = document.querySelector("#c");
+  // Get loaders
+  const loader = document.querySelector(".loader");
 
   // Create renderer
   const renderer = new THREE.WebGLRenderer({ canvas });
 
   // Colors for future use
-  let firstColor = 0x48e5c2; // cold
-  let secondColor = 0x333333; // dark gray
-  let thirdColor = 0xfcfaf9; // whiteish
-  let fourthColor = 0xf3d3bd; // cream
+  let firstColor = 0xf3d3bd; // cold
   let fifthColor = 0x5e5e5e; // light gray
-  let sixthColor = 0xd3d0cb; // light gray 2
-  let bonusColor = 0xf02050; // pinkish
 
   // Modifiers used when changing view
   let cameraModifier = 0.0005; // camera speed
-  let cameraRange = 0.2;
+  let cameraRange = 0.3;
 
   // Camera basic setup
   let cameraFov = 75;
@@ -36,14 +36,12 @@ function main() {
   );
 
   // Position camera
-  camera.position.set(0, 4, 9);
+  camera.position.set(0, 8, 9);
 
   // Create scene
   const scene = new THREE.Scene();
 
   // Add scene background and fog, should be of same color
-  scene.background = new THREE.Color(firstColor);
-  scene.fog = new THREE.FogExp2(firstColor, 0.15);
 
   // Helpers for positioning
   // var axesHelper = new THREE.AxesHelper(5);
@@ -74,15 +72,18 @@ function main() {
   // Main object
   {
     const objLoader = new OBJLoader2();
-    const material = new THREE.MeshPhongMaterial({ color: fifthColor });
-    objLoader.load("./assets/wolf.obj", function (obj) {
-      obj.scale.set(0.01, 0.01, 0.01);
+    const material = new THREE.MeshPhongMaterial({ color: firstColor });
+    objLoader.load("./assets/deer.obj", function (obj) {
+      obj.scale.set(0.008, 0.008, 0.008);
       obj.rotation.y = -1.5707963268;
       obj.children.forEach((child) => {
         child.material = material;
         //console.log(child.material);
       });
       scene.add(obj);
+      loader.style.display = "none";
+      tiles(false);
+      enableMenu();
     });
   }
 
@@ -93,11 +94,12 @@ function main() {
       return -Math.random() * num + Math.random() * num;
     }
 
-    const particleMaterial = new THREE.MeshToonMaterial({
-      color: 0x000000,
-      side: THREE.DoubleSide,
+    const particleMaterial = new THREE.MeshPhongMaterial({
+      color: 0xffffff,
+      shininess: 1,
+      reflectivity: 0.5,
     });
-    const particleGeometry = new THREE.CircleGeometry(0.1, 3);
+    const particleGeometry = new THREE.CircleGeometry(0.3, 3);
     let particleSpace = 15;
 
     for (let i = 1; i < 400; i++) {
@@ -164,6 +166,8 @@ function main() {
       camera.aspect = canvas.clientWidth / canvas.clientHeight;
       camera.updateProjectionMatrix();
     }
+    scene.background = new THREE.Color(mainColor());
+    scene.fog = new THREE.FogExp2(mainColor(), 0.15);
 
     scene.rotation.y -= (mouse.x * 8 - camera.rotation.y) * cameraModifier;
     scene.rotation.x -= (-(mouse.y * 2) - camera.rotation.x) * cameraModifier;
@@ -172,6 +176,11 @@ function main() {
     if (scene.rotation.y < -cameraRange) scene.rotation.y = -cameraRange;
     else if (scene.rotation.y > cameraRange) scene.rotation.y = cameraRange;
     //console.log(scene.rotation);
+
+    particleArray.forEach((particle) => {
+      //console.log(particle.rotation);
+      particle.rotation.y += 0.005;
+    });
     renderer.render(scene, camera);
 
     requestAnimationFrame(render);
