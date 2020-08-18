@@ -173,7 +173,7 @@ body {
   transition: opacity 1s;
 }
 .text1-h1-1 {
-  top: 35%;
+  top: 30%;
 }
 .text1-h1-2 {
   top: 50%;
@@ -498,7 +498,7 @@ p a:hover {
   display: none;
 }
 .active {
-  display: inherit;
+  display: flex;
 }
 /*additional*/
 /*media queries*/
