@@ -115,6 +115,7 @@ body {
   height: 100%;
   background-color: var(--secondColor);
   transition: 0.5s;
+  border-right: solid 1% var(--secondColor);
 }
 .cover-tiles-disabled {
   opacity: 0;
@@ -504,35 +505,6 @@ p a:hover {
 /*media queries*/
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .logo-container {
-    left: 10%;
-    top: 10%;
-    transform: translate(-10%, -10%);
-  }
-  .menu-container {
-    width: 44px;
-    height: 44px;
-    position: fixed;
-    left: 90%;
-    top: 10%;
-    transform: translate(-90%, -10%);
-    transition: display 0.5s;
-  }
-  .page-nav {
-    width: 30%;
-    height: 5%;
-    bottom: 10%;
-    left: 90%;
-    transform: translate(-90%, -10%);
-  }
-  .color-select {
-    top: 90%;
-    left: 10%;
-    transform: translate(-10%, -90%);
-    width: 20px;
-    height: 130px;
-  }
-
   .text-h1 {
     font-size: 130px;
   }
@@ -554,18 +526,7 @@ p a:hover {
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .text-p {
-    font-size: 24px;
-  }
-  p bold {
-    font-size: 22px;
-  }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) and (max-width: 800px) {
   .text-p {
     font-size: 26px;
   }
@@ -573,8 +534,25 @@ p a:hover {
     font-size: 26px;
   }
 }
+@media only screen and (max-width: 800px) {
+  .color-select {
+    top: 80%;
+    left: 90%;
+    transform: translate(-90%, -80%);
+    width: 20px;
+    height: 130px;
+  }
+  .menu-container {
+    width: 44px;
+    height: 44px;
+    position: fixed;
+    left: 10%;
+    top: 20%;
+    transform: translate(-10%, -20%);
+    transition: display 0.5s;
+  }
+}
 
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .text-p {
     font-size: 35px;
