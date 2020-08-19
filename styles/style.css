@@ -503,7 +503,6 @@ p a:hover {
 }
 /*additional*/
 /*media queries*/
-/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .text-h1 {
     font-size: 130px;
@@ -561,3 +560,4 @@ p a:hover {
     font-size: 36px;
   }
 }
+/*media queries*/
