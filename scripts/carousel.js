@@ -38,7 +38,7 @@ navArray.forEach((nav) => {
     e.preventDefault();
     ChangeFlag();
     const indexOfNav = [...nav.parentElement.children].indexOf(nav);
-    console.log(indexOfNav);
+    //console.log(indexOfNav);
     currentActiveText.classList.remove("active");
     currentActiveNav.classList.remove("page-nav-link-active");
     if (indexOfNav == 0) index = textArray.length - 1;
@@ -51,7 +51,7 @@ menuLinks.forEach((link) => {
     e.preventDefault();
     ChangeFlag();
     const indexOfNav = [...link.parentElement.children].indexOf(link);
-    console.log(indexOfNav);
+    //console.log(indexOfNav);
     currentActiveText.classList.remove("active");
     currentActiveNav.classList.remove("page-nav-link-active");
     if (indexOfNav == 0) index = textArray.length - 1;

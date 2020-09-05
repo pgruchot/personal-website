@@ -1,6 +1,6 @@
-import * as THREE from "../three.js-master/build/three.module.js";
-import { OrbitControls } from "../three.js-master/examples/jsm/controls/OrbitControls.js";
-import { OBJLoader2 } from "../three.js-master/examples/jsm/loaders/OBJLoader2.js";
+import * as THREE from "https://unpkg.com/three@0.120.1/build/three.module.js";
+import { OrbitControls } from "https://unpkg.com/three@0.120.1/examples/jsm/controls/OrbitControls.js";
+import { OBJLoader2 } from "https://unpkg.com/three@0.120.1/examples/jsm/loaders/OBJLoader2.js";
 import { tiles } from "./tiles.js";
 import { enableMenu } from "./menu.js";
 import { mainColor } from "./color.js";
