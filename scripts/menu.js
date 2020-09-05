@@ -7,9 +7,11 @@ let openFlag = false;
 menu.addEventListener("click", () => {
   menuFunctionality();
 });
-for (const link of menuLinks) {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
+for (let index = 0; index < menuLinks.length; index++) {
+  const element = menuLinks[index];
+  element.addEventListener("click", (e) => {
+    if (index == menuLinks.length - 1)
+      window.location.href = "https://github.com/pgruchot";
     menuFunctionality();
   });
 }

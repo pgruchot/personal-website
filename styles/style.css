@@ -167,7 +167,8 @@ body {
   transform: translate(-50%, -50%);
   font-family: Lakeshore;
   color: var(--fourthColor);
-  font-size: 180px;
+  font-size: 160px;
+  letter-spacing: 7px;
   text-transform: uppercase;
   text-align: center;
   width: 100%;
@@ -181,7 +182,7 @@ body {
 }
 .text1-h1-2 bold {
   color: var(--firstColor);
-  font-size: 200px;
+  font-size: 240px;
   transition: color 1s;
 }
 .text-p {
@@ -505,7 +506,7 @@ p a:hover {
 /*media queries*/
 @media only screen and (max-width: 600px) {
   .text-h1 {
-    font-size: 130px;
+    font-size: 80px;
   }
   .text1-h1-1 {
     top: 40%;
@@ -514,7 +515,7 @@ p a:hover {
     top: 50%;
   }
   .text1-h1-2 bold {
-    font-size: 180px;
+    font-size: 100px;
   }
   .text-p {
     width: 80%;
@@ -531,6 +532,12 @@ p a:hover {
   }
   p bold {
     font-size: 26px;
+  }
+  .text-h1 {
+    font-size: 100px;
+  }
+  .text1-h1-2 bold {
+    font-size: 140px;
   }
 }
 @media only screen and (max-width: 800px) {
